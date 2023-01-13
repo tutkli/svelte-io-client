@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+    import "../app.css";
+    import ChatBubble from "../components/ChatBubble.svelte";
+    import Chat from "../components/Chat.svelte";
+    import {chatOpened} from "../core/stores/chat.store";
+</script>
+
+<main class="w-screen h-screen flex justify-end items-end" style="overflow: hidden">
+    {#if $chatOpened}
+        <Chat />
+    {:else}
+        <ChatBubble />
+    {/if}
+</main>
