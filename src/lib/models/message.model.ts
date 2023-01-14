@@ -1,7 +1,7 @@
 export interface ChatMessage {
     id: string;
     username: string
-    clientMessage: boolean;
-    message: string;
+    clientId: string;
+    text: string;
     time: Date;
 }

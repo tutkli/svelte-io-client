@@ -2,7 +2,7 @@
     import TextInput from "./inputs/TextInput.svelte";
     import {socket} from "$lib/socketIo-client";
     import {connected} from "$lib/stores/socket.store";
-    import {messages} from "$lib/stores/chat.store";
+    import {client, messages} from "$lib/stores/chat.store";
 
     let value = '';
     const handleSubmit = async () => {
@@ -11,7 +11,7 @@
         if (!$connected) {
             messages.addOfflineMessage();
         } else {
-            socket.emit('message', value);
+            socket.emit('message', {clientId: $client.id, username: $client.username, text: value});
         }
 
         value = '';

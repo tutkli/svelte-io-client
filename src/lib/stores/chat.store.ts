@@ -4,8 +4,8 @@ import {v4} from "uuid";
 
 const offlineMessage = {
     username: 'Socket.io Client',
-    clientMessage: false,
-    message: `We couldn't connect to the Socket.io Server. Check the connection and try again.`,
+    clientId: v4(),
+    text: `We couldn't connect to the Socket.io Server. Check the connection and try again.`,
     time: new Date(),
 };
 
@@ -28,3 +28,4 @@ function messagesStore() {
 
 export const messages = messagesStore();
 export const chatOpened = writable<boolean>(false);
+export const client = writable({id: v4(), username: `User ${Math.round(Math.random() * 999999)}`});
