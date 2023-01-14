@@ -1,13 +1,20 @@
 <script>
     import TextInput from "./inputs/TextInput.svelte";
+    import {socket} from "$lib/socketIo-client";
+    import {connected} from "$lib/stores/socket.store";
     import {messages} from "$lib/stores/chat.store";
 
     let value = '';
     const handleSubmit = async () => {
-        if (value.trim().length > 0) {
-            messages.addMessage(value);
-            value = '';
+        if (value.trim().length === 0) return;
+
+        if (!$connected) {
+            messages.addOfflineMessage();
+        } else {
+            socket.emit('message', value);
         }
+
+        value = '';
     }
 </script>
 

@@ -1,10 +1,12 @@
 <script lang="ts">
     import ChatMessage from "./ChatMessage.svelte";
-    import {afterUpdate, beforeUpdate} from "svelte";
+    import {afterUpdate, beforeUpdate, onMount} from "svelte";
     import {messages} from "$lib/stores/chat.store";
 
     let container: HTMLDivElement;
     let autoscroll;
+
+    onMount(() => container.scrollTo({top: container.scrollHeight, behavior: 'auto'}))
 
     beforeUpdate(() => {
         autoscroll = container && (container.offsetHeight + container.scrollTop) > (container.scrollHeight - 20);
