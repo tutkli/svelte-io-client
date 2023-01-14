@@ -1,6 +1,6 @@
 <script>
     import TextInput from "./inputs/TextInput.svelte";
-    import {messages} from "../core/stores/chat.store";
+    import {messages} from "$lib/stores/chat.store";
 
     let value = '';
     const handleSubmit = async () => {

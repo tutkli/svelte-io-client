@@ -1,7 +1,6 @@
 <script lang="ts">
-
-    import {connected} from "../core/stores/socket.store";
-    import {chatOpened} from "../core/stores/chat.store";
+    import {connected} from "$lib/stores/socket.store";
+    import {chatOpened} from "$lib/stores/chat.store";
 </script>
 
 <div class="w-full flex flex-row justify-between sm:px-10 p-4 bg-orange-500 text-white rounded-t-xl">

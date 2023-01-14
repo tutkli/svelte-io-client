@@ -1,7 +1,7 @@
 <script lang="ts">
     import {fly} from 'svelte/transition';
     import {quintOut} from 'svelte/easing';
-    import {chatOpened} from "../core/stores/chat.store";
+    import {chatOpened} from "$lib/stores/chat.store";
 </script>
 
 <button in:fly={{y: 100, easing: quintOut}} class="m-6 p-4 bg-orange-500 text-white rounded-full hover:opacity-80" on:click={() => chatOpened.set(true)}>

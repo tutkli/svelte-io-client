@@ -1,7 +1,7 @@
 <script lang="ts">
-    import {messages} from "../core/stores/chat.store";
     import ChatMessage from "./ChatMessage.svelte";
     import {afterUpdate, beforeUpdate} from "svelte";
+    import {messages} from "$lib/stores/chat.store";
 
     let container: HTMLDivElement;
     let autoscroll;

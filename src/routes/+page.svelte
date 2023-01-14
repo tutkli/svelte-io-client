@@ -1,8 +1,8 @@
 <script>
     import "../app.css";
-    import ChatBubble from "../components/ChatBubble.svelte";
-    import Chat from "../components/Chat.svelte";
-    import {chatOpened} from "../core/stores/chat.store";
+    import {chatOpened} from "$lib/stores/chat.store";
+    import Chat from "$lib/components/Chat.svelte";
+    import ChatBubble from "$lib/components/ChatBubble.svelte";
 </script>
 
 <main class="w-screen h-screen flex justify-end items-end" style="overflow: hidden">

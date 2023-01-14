@@ -1,7 +1,7 @@
 <script lang="ts">
     import {scale} from 'svelte/transition';
     import {quintOut} from "svelte/easing";
-    import {ChatMessage} from "../core/models/message.model";
+    import {ChatMessage} from "../models/message.model";
 
     export let message: ChatMessage;
 </script>
