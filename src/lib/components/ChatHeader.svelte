@@ -1,6 +1,7 @@
 <script lang="ts">
     import {connected} from "$lib/stores/socket.store";
     import {chatOpened} from "$lib/stores/chat.store";
+    import Settings from "$lib/components/Settings.svelte";
 </script>
 
 <div class="w-full flex flex-row justify-between sm:px-10 p-4 bg-orange-500 text-white rounded-t-xl drop-shadow-xl">
@@ -18,7 +19,12 @@
         </div>
     </div>
 
-    <button class="p-4 rounded-full hover:opacity-80" on:click={() => chatOpened.set(false)}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24" style="fill: currentColor;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
-    </button>
+    <div class="flex justify-center items-center gap-2">
+        <Settings />
+
+        <button class="rounded-full hover:opacity-80" on:click={() => chatOpened.set(false)}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 24 24" style="fill: currentColor;"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+        </button>
+    </div>
+
 </div>

@@ -1,6 +1,6 @@
 <script lang="ts">
     import {createEventDispatcher} from "svelte";
-    import {keyupEnter} from "$lib/actions/keyupEnter";
+    import {keydownEnter} from "$lib/actions/keydownEnter";
 
     export let maxLength = 120;
     export let value = 'Lorem ipsum dolor sit amet.';
@@ -11,7 +11,7 @@
     const submit = () => dispatch('submit');
 </script>
 
-<div class="w-full flex flex-row" use:keyupEnter on:enter={() => submit()}>
+<div class="w-full flex flex-row" use:keydownEnter on:enter={() => submit()}>
     <textarea bind:value
               class="w-full h-24 sm:h-20 overflow-auto outline-0 p-4 rounded-l-xl" maxlength={maxLength}></textarea>
     <div class="bg-white text-gray-500 text-base sm:text-xl font-semibold p-4 sm:p-6 flex justify-center items-center rounded-r-xl">{doubled}</div>
